@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import './App.css'
+import PostList from './components/PostsList'
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1>MEME</h1>
+        <PostList />
       </div>
     </>
   )
