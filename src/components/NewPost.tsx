@@ -4,9 +4,10 @@ import { useState } from 'react';
 
 interface NewPostChangeHandlers {
   onCancel: () => void;
+  onAddPost: (postData: { body: string, author: string }) => void;
 }
 
-function NewPost({ onCancel }: NewPostChangeHandlers) {
+function NewPost({ onCancel, onAddPost }: NewPostChangeHandlers) {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
   function bodyChangeHandler(event: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -25,7 +26,7 @@ function NewPost({ onCancel }: NewPostChangeHandlers) {
       author: enteredAuthor
     }
 
-    console.log(postData);
+    onAddPost(postData);
     onCancel()
   }
 
